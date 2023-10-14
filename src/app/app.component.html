@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC</title>
+</head>
+<body>
+<form class="form-register">
+    <h4>Calculadora de IMC</h4>
+
+    <label for="nombres">Nombre</label><br>
+    <input class="controls" type="text" [(ngModel)]="nombre" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+    <br>
+    <label for="edad">Edad</label><br>
+    <input class="controls" type="number" [(ngModel)] ="edad" name="edad" id="edad" placeholder="Ingrese su Edad">
+    <br>
+    <label for="sexo">Sexo:</label>
+    <select class="controls"  id="sexo" name="sexo">
+    <option value="Masculino">Masculino</option>
+    <option value="Femenino">Femenino</option>
+    <option value="Otro">Otro 🏳️‍🌈</option>
+  </select>
+    <br>
+    <label for="estatura">Estatura</label><br>
+    <input class="controls" type="number" [(ngModel)]="estatura" name="estatura" id="estatura" placeholder="Estatura en metros">
+    <br>
+    <label for="peso">Peso</label><br>
+    <input class="controls" type="number" [(ngModel)]="peso" name="peso" id="peso" placeholder="Peso en KG">
+    <br>
+    <label for="imc">IMC</label><br>
+    <input class="controls" type="text" [readonly]="readonlyInput" [(ngModel)]="imc" name="imc" id="imc" placeholder="IMC">
+    <br>
+    <label for="estado">Estado</label><br>
+    <input class="controls" type="text" [readonly]="readonlyInput" [(ngModel)]="resultado" name="estado" id="estado" placeholder="Estado">
+    <br>
+    <button type="button" class="btn btn-success" (click)="calcularIMC()">Calcular IMC</button>
+    <button type="reset" class="btn btn-danger">Restablecer</button>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Rango de IMC</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td> Menos de 18.5</td>
+          <td>Delgadez</td>
+        </tr>
+
+        <tr>
+          <td>18.5 - 24.9</td>
+          <td>Peso normal</td>
+        </tr>
+
+        <tr>
+          <td>25 - 29.9</td>
+          <td>Sobrepeso</td>
+        </tr>
+
+        <tr>
+          <td>30 o más</td>
+          <td>Obesidad</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p>El sobrepeso puede causar la elevación de la concentración de colesterol total, cuidate.</p>
+  </form>
+</body>
+</html>
+
